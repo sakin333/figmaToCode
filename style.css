@@ -96,7 +96,6 @@ img {
     max-width: 1400px;
     padding: 0 1rem;
     margin: 0 auto;
-    border: 1px solid red;
 }
 
 /* header */
@@ -145,6 +144,10 @@ img {
     opacity: 0.9;
 }
 
+.menu-container {
+    display: none;
+    cursor: pointer;
+}
 /* cover */
 .site-cover {
     padding: 8rem 0;
@@ -188,7 +191,7 @@ img {
 .site-content aside > .card {
     flex: 2;
     width: 424px;
-    height: 324px;
+    height: 320px;
     border: 2px solid var(--bg-secondary);
     border-radius: 4px;
     padding: 2rem;
@@ -319,6 +322,49 @@ img {
     font-weight: var(--font-normal);
 }
 
+@media screen and (max-width: 860px) {
+    body,
+    button,
+    input,
+    textarea {
+        font-size: var(--small-text);
+    }
+    .container {
+        max-width: 860px;
+        padding: 1rem;
+    }
+    .logo-container {
+        height: 46px;
+        width: 120px;
+        align-items: center;
+    }
+    .primary-button {
+        font-size: var(--small-text);
+        font-weight: var(--font-normal);
+        height: 50px;
+        width: 120px;
+    }
+    .site-content {
+        display: flex;
+        flex-direction: column;
+        padding: 0 1rem;
+    }
+    .site-content aside > .card {
+        margin: 0 auto;
+    }
+
+    .socials-section {
+        margin-right: 8rem;
+    }
+
+    .navigation-section {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 1rem;
+        column-gap: 2rem;
+    }
+}
+
 @media screen and (max-width: 460px) {
     body,
     button,
@@ -327,8 +373,8 @@ img {
         font-size: var(--small-text);
     }
     .container {
+        max-width: 460px;
         padding: 1rem;
-        border: 1px solid red;
     }
     .site-header {
         padding: 0 1rem;
@@ -345,12 +391,38 @@ img {
         height: 40px;
         width: 120px;
     }
-    .navigation-bar .hidden-class {
-        display: none;
+    .menu-container {
+        display: block;
     }
+    .navigation-bar {
+        position: relative;
+    }
+    .navigation-container {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--bg-secondary);
+        padding: 1rem;
+        position: absolute;
+        right: 0;
+        top: 52px;
+        transform: translateY(-250px);
+        transition: transform 300ms ease-in;
+    }
+
+    .navigation-container.show {
+        transform: translateX(0);
+
+    }
+
+    .navigation-container li a {
+        display: flex;
+        align-items: flex-start;
+    }
+
 
     .site-cover .image-container {
         width: 100px;
+        margin-bottom: 0.5rem;
     }
     .site-cover .text-container {
         width: 360px;
@@ -403,7 +475,7 @@ img {
     }
     .socials-section {
         align-items: center;
-        margin-bottom: 2rem;
+        margin: 0 auto 3rem auto;
     }
     .socials-section .socials > a {
         width: 40px;
@@ -413,7 +485,7 @@ img {
     .navigation-section {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
+        column-gap: 4rem;
     }
     .navigation-section > div > h5 {
         font-size: var(--heading_6);

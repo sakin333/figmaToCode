@@ -13,13 +13,16 @@
             <div class="logo-container">
                 <a href="#"><img src="./assets/Logo.png" alt="Logo"></a>
             </div>
-            <ul class="navigation-container hidden-class">
+            <ul class="navigation-container show">
                 <li><a href="#home">Home <img src="./assets/chevron-down.png" alt=""></a></li>
                 <li><a href="#pages">Pages <img src="./assets/chevron-down.png" alt=""></a></a></li>
                 <li><a href="#blogs">Blogs <img src="./assets/chevron-down.png" alt=""></a></a></li>
                 <li><a href="#portfolio">Portfolio <img src="./assets/chevron-down.png" alt=""></a></a></li>
             </ul>
             <button class="primary-button">Get Started</button>
+            <div class="menu-container" onclick="handleMenu()">
+                <img src="./assets/Menu-icon-3.png" alt="">
+            </div>
         </nav>
     </header>
     <main id="casestudies" class="casestudies">
@@ -152,5 +155,8 @@
         <p class="copyright">&copy; 2019-2020 Wave Multipurpose Design Template.</p>
     </footer>
     </div>
+    <script>
+        document.querySelector('.menu-container').addEventListener('click', () => document.querySelector('.navigation-container').classList.toggle('show'))
+    </script>
 </body>
 </html>
